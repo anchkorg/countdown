@@ -1,0 +1,10 @@
+
+services:
+  countdown-timer:
+    build: .
+    container_name: countdown-timer-app
+    ports:
+      - "3000:80"  # Map host port 3000 to container port 80
+    restart: unless-stopped
+    volumes:
+      - ./logs:/var/log/nginx  # Optional: for nginx logs
